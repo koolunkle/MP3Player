@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_likes"
+        android:icon="@drawable/likes_full"
+        android:title="@string/menu_likes"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_list"
+        android:icon="@drawable/ic_list_24"
+        android:title="@string/menu_list"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_search"
+        android:title="@string/menu_search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom" />
+</menu>

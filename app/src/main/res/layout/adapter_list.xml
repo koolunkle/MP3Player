@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_album"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/iv_album"
+                android:src="@drawable/music_note"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_artist"
+                style="@style/text_20_bold_808080"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:ems="10"
+                android:maxLines="1"
+                android:text="@string/tv_artist"
+                app:layout_constraintBottom_toTopOf="@id/tv_title"
+                app:layout_constraintStart_toEndOf="@+id/iv_album"
+                app:layout_constraintTop_toTopOf="@+id/iv_album" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/text_20_bold_808080"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:ems="10"
+                android:maxLines="1"
+                android:text="@string/tv_title"
+                app:layout_constraintBottom_toTopOf="@id/tv_duration"
+                app:layout_constraintStart_toStartOf="@id/tv_artist"
+                app:layout_constraintTop_toBottomOf="@+id/tv_artist" />
+
+            <TextView
+                android:id="@+id/tv_duration"
+                style="@style/text_20_bold_808080"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:ems="10"
+                android:maxLines="1"
+                android:text="@string/tv_duration"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_album"
+                app:layout_constraintStart_toStartOf="@id/tv_artist"
+                app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+            <ImageView
+                android:id="@+id/iv_likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/iv_likes"
+                android:maxWidth="30dp"
+                android:maxHeight="30dp"
+                android:src="@drawable/likes_empty"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
