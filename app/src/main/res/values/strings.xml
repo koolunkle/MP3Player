@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">MP3Player</string>
+
+    <string name="tv_artist">Artist</string>
+    <string name="tv_title">Title</string>
+    <string name="tv_duration">Duration</string>
+    <string name="tv_duration_start">00:00</string>
+    <string name="tv_duration_end">00:00</string>
+    <string name="tv_volume_max">100</string>
+    <string name="tv_volume_min">0</string>
+
+    <string name="iv_album">Album</string>
+    <string name="iv_likes">Likes</string>
+    <string name="iv_list">List</string>
+    <string name="iv_play">Play</string>
+    <string name="iv_stop">Stop</string>
+    <string name="iv_shuffle">Shuffle</string>
+
+    <string name="menu_likes">Likes</string>
+    <string name="menu_list">List</string>
+    <string name="menu_search">Search</string>
+
+    <string name="toast_back_pressed">Press the Back button once more to exit</string>
 </resources>
