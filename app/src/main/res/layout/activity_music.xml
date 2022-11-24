@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.example.mp3player.view.activity.MusicActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        tools:context=".view.activity.MusicActivity">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_album"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="150dp"
+            android:contentDescription="@string/iv_album"
+            android:src="@drawable/music_note"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_volume_max"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_volume_max"
+            app:layout_constraintEnd_toStartOf="@id/seekBar_volume_wrapper"
+            app:layout_constraintTop_toTopOf="@id/seekBar_volume_wrapper" />
+
+        <TextView
+            android:id="@+id/tv_volume_min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_volume_min"
+            app:layout_constraintBottom_toBottomOf="@id/seekBar_volume_wrapper"
+            app:layout_constraintEnd_toStartOf="@id/seekBar_volume_wrapper" />
+
+        <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+            android:id="@+id/seekBar_volume_wrapper"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_album"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_album">
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                android:id="@+id/seekBar_volume"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:progressDrawable="@drawable/seekbar_progress"
+                android:splitTrack="false"
+                android:thumb="@drawable/seekbar_thumb"
+                app:seekBarRotation="CW270" />
+
+        </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/text_20_bold_808080"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="30dp"
+            android:text="@string/tv_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_album" />
+
+        <TextView
+            android:id="@+id/tv_artist"
+            style="@style/text_20_bold_808080"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="30dp"
+            android:text="@string/tv_artist"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="@string/tv_duration_start"
+            app:layout_constraintBottom_toTopOf="@id/seekBar_duration"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_artist" />
+
+        <TextView
+            android:id="@+id/tv_duration_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:text="@string/tv_duration_end"
+            app:layout_constraintBottom_toBottomOf="@id/tv_duration"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_duration" />
+
+        <SeekBar
+            android:id="@+id/seekBar_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressDrawable="@drawable/seekbar_progress"
+            android:splitTrack="false"
+            android:thumb="@drawable/seekbar_thumb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_duration" />
+
+        <ImageButton
+            android:id="@+id/btn_previous"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/button_10_2196f3"
+            android:contentDescription="@string/iv_list"
+            android:onClick="@{activity::setPrevious}"
+            android:src="@drawable/ic_previous_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_play"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.15" />
+
+        <ImageButton
+            android:id="@+id/btn_play"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/button_10_2196f3"
+            android:contentDescription="@string/iv_play"
+            android:onClick="@{activity::setPlay}"
+            android:src="@drawable/ic_play_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_shuffle"
+            app:layout_constraintStart_toEndOf="@id/btn_previous"
+            app:layout_constraintWidth_percent="0.15" />
+
+        <ImageButton
+            android:id="@+id/btn_shuffle"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/button_10_2196f3"
+            android:contentDescription="@string/iv_shuffle"
+            android:onClick="@{activity::setShuffle}"
+            android:src="@drawable/ic_shuffle_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_stop"
+            app:layout_constraintStart_toEndOf="@id/btn_play"
+            app:layout_constraintWidth_percent="0.15" />
+
+        <ImageButton
+            android:id="@+id/btn_stop"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/button_10_2196f3"
+            android:contentDescription="@string/iv_list"
+            android:onClick="@{activity::setStop}"
+            android:src="@drawable/ic_stop_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_next"
+            app:layout_constraintStart_toEndOf="@id/btn_shuffle"
+            app:layout_constraintWidth_percent="0.15" />
+
+        <ImageButton
+            android:id="@+id/btn_next"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/button_10_2196f3"
+            android:contentDescription="@string/iv_stop"
+            android:onClick="@{activity::setNext}"
+            android:src="@drawable/ic_next_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_stop"
+            app:layout_constraintWidth_percent="0.15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
